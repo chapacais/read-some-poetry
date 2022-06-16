@@ -1,0 +1,10 @@
+<section class="poem">
+  <h3 class="poem__title">{{ poem.title }}</h3>
+  <h2 class="poem__author"><span *ngIf="poem.author">by </span>{{ poem.author }}</h2>
+  <br>
+  <div class="poem__lines" *ngFor="let line of poem.lines">
+    <p class="poem__line">
+      {{ line }}
+    </p>
+  </div>
+</section>

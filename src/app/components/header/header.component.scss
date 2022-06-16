@@ -1,0 +1,31 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-size: 1rem;
+
+  a {
+    text-decoration: none;
+    color: #000;
+    cursor: pointer;
+
+    &:hover {
+      transition: all .1s;
+      transform: scale(1.05);
+    }
+  }
+
+  .menu {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+
+    &:hover {
+      transition: all .1s;
+      transform: scale(1.05);
+    }
+  }
+}

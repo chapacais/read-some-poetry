@@ -1,0 +1,29 @@
+.poem {
+  &__title {
+    color: #333;
+    text-decoration: underline;
+    margin-bottom: 5px;
+  }
+
+  &__author {
+    font-size: 1.65rem;
+    margin-bottom: 10px;
+
+    span {
+      font-size: 1.1rem;
+      font-weight: 400;
+    }
+  }
+
+  &__lines {
+    font-size: 0.9rem;
+
+    @media screen and (min-width: 768px) {
+      font-size: 1rem;
+    }
+  }
+
+  &__line {
+    margin-bottom: 5px;
+  }
+}

@@ -1,0 +1,8 @@
+<header class="header container">
+  <a routerLink="/">poetry app</a>
+  <div class="menu" (click)="openMenu = !openMenu">
+    <span>menu</span>
+    <i class="fa-solid fa-bars-staggered"></i>
+  </div>
+</header>
+<app-menu *ngIf="openMenu" (closeMenu)="openMenu = !openMenu"></app-menu>

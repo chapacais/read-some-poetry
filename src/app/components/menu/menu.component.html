@@ -1,0 +1,13 @@
+<nav class="menu container">
+  <div class="menu__close" (click)="onClose()">
+    <span>close</span>
+    <i class="fa-solid fa-x"></i>
+  </div>
+  <ul class="menu__list">
+    <li class="menu__list-item" *ngFor="let route of routes">
+      <a class="menu__list-item__link" [routerLink]="route.route" [routerLinkActive]="'is-active'">
+        {{ route.name }}
+      </a>
+    </li>
+  </ul>
+</nav>
