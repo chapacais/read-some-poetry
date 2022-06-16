@@ -1,6 +1,6 @@
 .menu {
   position: fixed;
-  background: floralwhite;
+  background: rgba(255, 250, 240, 0.95);
   top: 0;
   right: 0;
   box-sizing: border-box;
@@ -53,6 +53,7 @@
 
       &:hover {
         color: #555;
+        font-weight: 700;
       }
     }
   }

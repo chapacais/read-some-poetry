@@ -1,11 +1,16 @@
 <div class="poem-card" (click)="goToPoemPage(poem.title)">
   <h3 class="poem-card__title">{{ poem.title }}</h3>
   <h2 class="poem-card__author"><span *ngIf="poem.author">by </span>{{ poem.author }}</h2>
-  <br *ngIf="width > 768">
-  <div class="poem-card__lines" *ngFor="let line of poem.lines | slice:0:4" [style.display]="width > 768 ? 'block' : 'none'">
+  <br *ngIf="width >= 768">
+  <div class="poem-card__lines" *ngFor="let line of poem.lines | slice:0:5" [style.display]="width >= 768 ? 'block' : 'none'">
     <p class="poem-card__line">
       {{ line }}
     </p>
   </div>
-  <p *ngIf="width > 768" class="poem-card__ellipsis">...</p>
+  <div class="poem-card__lines" *ngFor="let line of poem.lines | slice:0:3">
+    <p class="poem-card__line" *ngIf="width < 768">
+      {{ line }}
+    </p>
+  </div>
+  <p class="poem-card__ellipsis">...</p>
 </div>
