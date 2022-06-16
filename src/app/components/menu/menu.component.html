@@ -5,7 +5,7 @@
   </div>
   <ul class="menu__list">
     <li class="menu__list-item" *ngFor="let route of routes">
-      <a class="menu__list-item__link" [routerLink]="route.route" [routerLinkActive]="'is-active'">
+      <a class="menu__list-item__link" [routerLink]="route.route" (click)="onClose()">
         {{ route.name }}
       </a>
     </li>
