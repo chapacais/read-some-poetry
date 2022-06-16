@@ -10,19 +10,21 @@ import { PoetryService } from 'src/app/services/poetry.service';
 })
 export class HomeComponent implements OnInit {
 
-  selectedPoem: Poem = {
-    title: '',
-    author: '',
-    lines: [],
-    linecount: ''
-  }
+  selectedPoem: Poem = {};
 
   selectedPoemsForUser: Poem[] = [];
+
+  userDate: number = 0;
 
   constructor(private _poetryService: PoetryService, private _router: Router) { }
 
   ngOnInit(): void {
-    if (!localStorage.getItem('selectedPoemsForUser') || !this.lessThanOneHourAgo(Date.now())) {
+    this.userDate = JSON.parse(localStorage.getItem('userDate') || '0') || Date.now();
+    localStorage.setItem('userDate', JSON.stringify(this.userDate));
+    console.log(this.userDate);
+    if (!localStorage.getItem('selectedPoemsForUser') || !this.lessThanOneHourAgo(this.userDate)) {
+      this.userDate = Date.now();
+      localStorage.setItem('userDate', JSON.stringify(this.userDate));
       this._poetryService.readRandomPoem(3).subscribe(data => {
         this.selectedPoemsForUser = data;
         console.log(this.selectedPoemsForUser);
@@ -32,7 +34,7 @@ export class HomeComponent implements OnInit {
       this.selectedPoemsForUser = JSON.parse(localStorage.getItem('selectedPoemsForUser') || '[]');
       console.log(this.selectedPoemsForUser);
     }
-    console.log(this.lessThanOneHourAgo(Date.now()))
+    console.log(this.lessThanOneHourAgo(this.userDate));
   }
 
   getOneRandomPoem() {
@@ -42,7 +44,7 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  lessThanOneHourAgo(date: any) {
+  lessThanOneHourAgo(date: number) {
     const ONE_HOUR = 1000 * 60 * 60;
     const anHourAgo = Date.now() - ONE_HOUR;
     return date > anHourAgo;

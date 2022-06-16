@@ -10,12 +10,7 @@ import { PoetryService } from 'src/app/services/poetry.service';
 })
 export class PoemComponent implements OnInit {
 
-  poem: Poem = {
-    title: '',
-    author: '',
-    lines: [],
-    linecount: ''
-  };
+  poem: Poem = {};
 
   constructor(private _poetryService: PoetryService, private _route: ActivatedRoute) { }
 
