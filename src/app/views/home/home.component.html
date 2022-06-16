@@ -1,8 +1,16 @@
-<section class="greeting">
+<section class="greeting container">
   <h1>Greetings!</h1>
   <p>Want to read some poetry? You've come to the perfect place, my friend!</p>
 </section>
-<section class="get-random">
-  <h2>Doesn't know where to start?</h2>
-  <button class="btn" (click)="getRandomPoem()">Get Random Poem</button>
+<section class="get-random container">
+  <h2>Don't know where to start?</h2>
+  <button class="btn" (click)="getOneRandomPoem()">Get Random Poem</button>
+</section>
+<section class="recommendations container">
+  <h2>Recommendations:</h2>
+  <ul class="recommendations__list">
+    <li *ngFor="let poem of selectedPoemsForUser">
+      <app-poem-card [poem]="poem"></app-poem-card>
+    </li>
+  </ul>
 </section>

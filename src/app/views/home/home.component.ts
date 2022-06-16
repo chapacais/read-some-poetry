@@ -17,16 +17,35 @@ export class HomeComponent implements OnInit {
     linecount: ''
   }
 
+  selectedPoemsForUser: Poem[] = [];
+
   constructor(private _poetryService: PoetryService, private _router: Router) { }
 
   ngOnInit(): void {
+    if (!localStorage.getItem('selectedPoemsForUser') || !this.lessThanOneHourAgo(Date.now())) {
+      this._poetryService.readRandomPoem(3).subscribe(data => {
+        this.selectedPoemsForUser = data;
+        console.log(this.selectedPoemsForUser);
+        localStorage.setItem('selectedPoemsForUser', JSON.stringify(this.selectedPoemsForUser));
+      })
+    } else {
+      this.selectedPoemsForUser = JSON.parse(localStorage.getItem('selectedPoemsForUser') || '[]');
+      console.log(this.selectedPoemsForUser);
+    }
+    console.log(this.lessThanOneHourAgo(Date.now()))
   }
 
-  getRandomPoem() {
+  getOneRandomPoem() {
     this._poetryService.readRandomPoem().subscribe(data => {
       this.selectedPoem = data[0];
       this._router.navigate([`/poem/${this.selectedPoem.title}`]);
     });
+  }
+
+  lessThanOneHourAgo(date: any) {
+    const ONE_HOUR = 1000 * 60 * 60;
+    const anHourAgo = Date.now() - ONE_HOUR;
+    return date > anHourAgo;
   }
 
 }

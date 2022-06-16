@@ -12,8 +12,8 @@ export class PoetryService {
 
   constructor(private _http: HttpClient) { }
 
-  readRandomPoem():Observable<Poem[]> {
-    const url = `${this.baseUrl}/random`;
+  readRandomPoem(quantity?: number, property?: string): Observable<Poem[]> {
+    const url = `${this.baseUrl}/random${quantity ? `/${quantity}` : ''}${property ? `/${property}` : ''}`;
     return this._http.get<Poem[]>(url);
   }
 
@@ -22,8 +22,8 @@ export class PoetryService {
     return this._http.get<Poem[]>(url);
   }
 
-  readAuthors() {
+  readAuthors(): Observable<Poem[]> {
     const url = `${this.baseUrl}/author`;
-    return this._http.get(url);
+    return this._http.get<Poem[]>(url);
   }
 }

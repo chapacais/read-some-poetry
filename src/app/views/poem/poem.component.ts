@@ -23,7 +23,7 @@ export class PoemComponent implements OnInit {
     const title = this._route.snapshot.paramMap.get('title');
     this._poetryService.readPoemByTitle(title).subscribe(data => {
       this.poem = data[0];
-      localStorage.setItem('poem', this.poem.title);
+      localStorage.setItem('poemTitle', this.poem.title || '');
     });
   }
 

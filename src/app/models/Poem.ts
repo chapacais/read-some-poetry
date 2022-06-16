@@ -1,6 +1,6 @@
 export interface Poem {
-  title: string
-  author: string
-  lines: string[]
-  linecount: string
+  title?: string
+  author?: string
+  lines?: string[]
+  linecount?: string
 }

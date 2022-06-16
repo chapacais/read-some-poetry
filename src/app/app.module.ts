@@ -8,6 +8,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { HomeComponent } from './views/home/home.component';
 import { PoemComponent } from './views/poem/poem.component';
+import { PoemCardComponent } from './components/poem-card/poem-card.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { PoemComponent } from './views/poem/poem.component';
     HeaderComponent,
     MenuComponent,
     HomeComponent,
-    PoemComponent
+    PoemComponent,
+    PoemCardComponent
   ],
   imports: [
     BrowserModule,
