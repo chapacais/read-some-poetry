@@ -8,7 +8,7 @@ import { Poem } from '../models/Poem';
 })
 export class PoetryService {
 
-  baseUrl: string = 'https://poetrydb.org'
+  baseUrl: string = 'https://poetrydb.org';
 
   constructor(private _http: HttpClient) { }
 
@@ -22,8 +22,8 @@ export class PoetryService {
     return this._http.get<Poem[]>(url);
   }
 
-  readAuthors(): Observable<Poem[]> {
-    const url = `${this.baseUrl}/author`;
-    return this._http.get<Poem[]>(url);
+  readAuthors(name?: string): Observable<any> {
+    const url = `${this.baseUrl}/author${name ? `/${name}` : ''}`;
+    return this._http.get<any>(url);
   }
 }

@@ -1,0 +1,8 @@
+<section class="author container">
+  <h2 class="author__name">{{ authorName }}</h2>
+  <ul class="author__poem-list">
+    <li class="author__poem" *ngFor="let poem of poems">
+      <app-poem-card [poem]="poem" [isAuthorPage]="true"></app-poem-card>
+    </li>
+  </ul>
+</section>

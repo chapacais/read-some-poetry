@@ -2,15 +2,14 @@
   padding: 10px;
   background-color: rgb(236, 232, 221);
   border: 1px solid darkkhaki;
-  margin-bottom: 10px;
   cursor: pointer;
 
   &:hover {
     background-color: floralwhite;
   }
 
-  @media screen and (min-width: 1280px) {
-    height: 300px;
+  @media screen and (min-width: 1024px) {
+    height: 325px;
     width: 300px;
   }
 

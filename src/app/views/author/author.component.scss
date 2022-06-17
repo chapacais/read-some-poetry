@@ -1,0 +1,24 @@
+.author {
+  &__name {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+
+  &__poem-list {
+    display: grid;
+    gap: 10px;
+    place-items: center;
+
+    @media screen and (min-width: 1024px) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @media screen and (min-width: 1440px) {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+  }
+
+  &__poem {
+    width: 100%;
+  }
+}

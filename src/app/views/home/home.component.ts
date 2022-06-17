@@ -21,20 +21,16 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.userDate = JSON.parse(localStorage.getItem('userDate') || '0') || Date.now();
     localStorage.setItem('userDate', JSON.stringify(this.userDate));
-    console.log(this.userDate);
     if (!localStorage.getItem('selectedPoemsForUser') || !this.lessThanOneHourAgo(this.userDate)) {
       this.userDate = Date.now();
       localStorage.setItem('userDate', JSON.stringify(this.userDate));
       this._poetryService.readRandomPoem(3).subscribe(data => {
         this.selectedPoemsForUser = data;
-        console.log(this.selectedPoemsForUser);
         localStorage.setItem('selectedPoemsForUser', JSON.stringify(this.selectedPoemsForUser));
       })
     } else {
       this.selectedPoemsForUser = JSON.parse(localStorage.getItem('selectedPoemsForUser') || '[]');
-      console.log(this.selectedPoemsForUser);
     }
-    console.log(this.lessThanOneHourAgo(this.userDate));
   }
 
   getOneRandomPoem() {

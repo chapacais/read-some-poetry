@@ -1,0 +1,35 @@
+.authors {
+  &__title {
+    font-size: 3rem;
+    margin-bottom: 10px;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+
+    @media screen and (min-width: 768px) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media screen and (min-width: 1024px) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @media screen and (min-width: 1440px) {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+  }
+
+  &__item-card {
+    padding: 10px;
+    background-color: rgb(236, 232, 221);
+    border: 1px solid darkkhaki;
+    cursor: pointer;
+
+    &:hover {
+      background-color: floralwhite;
+    }
+  }
+}

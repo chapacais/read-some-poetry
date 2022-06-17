@@ -27,20 +27,19 @@
     margin-bottom: 10px;
     font-size: 1.65rem;
 
-    @media screen and (min-width: 1280px) {
+    @media screen and (min-width: 1024px) {
       margin-bottom: 20px;
     }
   }
 
   &__list {
-    list-style: none;
     display: flex;
     flex-direction: column;
+    gap: 10px;
 
-    @media screen and (min-width: 1280px) {
+    @media screen and (min-width: 1024px) {
       flex-direction: row;
       justify-content: center;
-      gap: 20px;
     }
   }
 }

@@ -9,6 +9,7 @@ import { Poem } from 'src/app/models/Poem';
 })
 export class PoemCardComponent implements OnInit {
   @Input() poem: Poem = {};
+  @Input() isAuthorPage: boolean = false;
   @HostListener('window:resize', ['$event'])
   onResize() {
     this.width = window.innerWidth;
@@ -22,7 +23,7 @@ export class PoemCardComponent implements OnInit {
     this.width = window.innerWidth;
   }
 
-  goToPoemPage(title: string | undefined) {
+  openPoemPage(title: string | undefined) {
     this._router.navigate([`poem/${title}`]);
   }
 

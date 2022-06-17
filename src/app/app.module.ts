@@ -9,6 +9,8 @@ import { MenuComponent } from './components/menu/menu.component';
 import { HomeComponent } from './views/home/home.component';
 import { PoemComponent } from './views/poem/poem.component';
 import { PoemCardComponent } from './components/poem-card/poem-card.component';
+import { AuthorsComponent } from './views/authors/authors.component';
+import { AuthorComponent } from './views/author/author.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { PoemCardComponent } from './components/poem-card/poem-card.component';
     MenuComponent,
     HomeComponent,
     PoemComponent,
-    PoemCardComponent
+    PoemCardComponent,
+    AuthorsComponent,
+    AuthorComponent
   ],
   imports: [
     BrowserModule,

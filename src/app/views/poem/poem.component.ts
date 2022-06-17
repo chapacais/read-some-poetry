@@ -16,10 +16,15 @@ export class PoemComponent implements OnInit {
 
   ngOnInit(): void {
     const title = this._route.snapshot.paramMap.get('title');
-    this._poetryService.readPoemByTitle(title).subscribe(data => {
-      this.poem = data[0];
-      localStorage.setItem('poemTitle', this.poem.title || '');
-    });
+    if (!localStorage.getItem('poem') || JSON.parse(localStorage.getItem('poem') || '').title !== title) {
+      this._poetryService.readPoemByTitle(title).subscribe(data => {
+        this.poem = data[0];
+        localStorage.setItem('poem', JSON.stringify(this.poem));
+        localStorage.setItem('poemTitle', this.poem.title || '');
+      });
+    } else {
+      this.poem = JSON.parse(localStorage.getItem('poem') || '');
+    }
   }
 
 }

@@ -1,0 +1,10 @@
+<section class="authors container">
+  <h2 class="authors__title">Authors:</h2>
+  <ul class="authors__list">
+    <li class="authors__item" *ngFor="let author of authors.authors">
+      <div class="authors__item-card" (click)="openAuthorPage(author)">
+        {{ author }}
+      </div>
+    </li>
+  </ul>
+</section>
