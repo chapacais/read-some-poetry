@@ -11,6 +11,7 @@ import { PoemComponent } from './views/poem/poem.component';
 import { PoemCardComponent } from './components/poem-card/poem-card.component';
 import { AuthorsComponent } from './views/authors/authors.component';
 import { AuthorComponent } from './views/author/author.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { AuthorComponent } from './views/author/author.component';
     PoemComponent,
     PoemCardComponent,
     AuthorsComponent,
-    AuthorComponent
+    AuthorComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
