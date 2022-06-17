@@ -11,7 +11,7 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: 'poem/:title',
+    path: 'poem/:author/:title',
     component: PoemComponent
   },
   {

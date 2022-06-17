@@ -11,7 +11,6 @@ import { PoetryService } from 'src/app/services/poetry.service';
 export class HomeComponent implements OnInit {
 
   selectedPoem: Poem = {};
-
   selectedPoemsForUser: Poem[] = [];
 
   userDate: number = 0;
@@ -36,7 +35,7 @@ export class HomeComponent implements OnInit {
   getOneRandomPoem() {
     this._poetryService.readRandomPoem().subscribe(data => {
       this.selectedPoem = data[0];
-      this._router.navigate([`/poem/${this.selectedPoem.title}`]);
+      this._router.navigate([`/poem/${this.selectedPoem.author}/${this.selectedPoem.title}`]);
     });
   }
 

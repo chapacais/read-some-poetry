@@ -23,8 +23,8 @@ export class PoemCardComponent implements OnInit {
     this.width = window.innerWidth;
   }
 
-  openPoemPage(title: string | undefined) {
-    this._router.navigate([`poem/${title}`]);
+  openPoemPage(author: any, title: any) {
+    this._router.navigate([`poem/${author}/${title}`]);
   }
 
 }

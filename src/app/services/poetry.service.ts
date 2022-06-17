@@ -17,8 +17,8 @@ export class PoetryService {
     return this._http.get<Poem[]>(url);
   }
 
-  readPoemByTitle(title: any): Observable<Poem[]> {
-    const url = `${this.baseUrl}/title/${title}`;
+  readPoemByAuthor(author: any, title: any): Observable<Poem[]> {
+    const url = `${this.baseUrl}/author,title/${author};${title}`;
     return this._http.get<Poem[]>(url);
   }
 

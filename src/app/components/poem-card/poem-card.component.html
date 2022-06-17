@@ -1,4 +1,4 @@
-<div class="poem-card" (click)="openPoemPage(poem.title)">
+<div class="poem-card" (click)="openPoemPage(poem.author, poem.title)">
   <h3 class="poem-card__title">{{ poem.title }}</h3>
   <h2 *ngIf="!isAuthorPage" class="poem-card__author"><span *ngIf="poem.author">by </span>{{ poem.author }}</h2>
   <br *ngIf="width >= 768">

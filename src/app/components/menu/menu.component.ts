@@ -17,7 +17,7 @@ export class MenuComponent implements OnInit {
     },
     {
       name: `${localStorage.getItem('poemTitle') ? 'Current Poem' : ''}`,
-      route: `/poem/${localStorage.getItem('poemTitle')}`
+      route: `/poem/${localStorage.getItem('poemAuthor')}/${localStorage.getItem('poemTitle')}`
     },
     {
       name: 'Authors',
